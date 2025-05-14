@@ -1,0 +1,503 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2d3748;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 10px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+header h1 {
+    text-align: center;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+nav button {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #718096;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+nav button:hover {
+    color: #4299e1;
+}
+
+nav button.active {
+    color: #4299e1;
+    border-bottom: 2px solid #4299e1;
+}
+
+/* Main Content */
+main {
+    padding: 20px 0;
+}
+
+section {
+    display: none;
+}
+
+section.active-section {
+    display: block;
+}
+
+/* Calculator Styles */
+.calculator {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.calculator-display {
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.history-display {
+    font-size: 0.9rem;
+    color: #718096;
+    min-height: 20px;
+    text-align: right;
+}
+
+.main-display {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 10px 0;
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.calculator-history {
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 20px;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+.calculator-history ul {
+    list-style-type: none;
+}
+
+.calculator-history li {
+    padding: 6px 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.calculator-history li:last-child {
+    border-bottom: none;
+}
+
+.empty-history {
+    color: #a0aec0;
+    font-style: italic;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    min-height: 60px;
+}
+
+.num-btn {
+    background-color: #f1f5f9;
+    color: #2d3748;
+}
+
+.num-btn:hover {
+    background-color: #e2e8f0;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+.op-btn {
+    background-color: #4299e1;
+    color: #fff;
+}
+
+.op-btn:hover {
+    background-color: #3182ce;
+}
+
+.func-btn {
+    background-color: #e2e8f0;
+    color: #4a5568;
+}
+
+.func-btn:hover {
+    background-color: #cbd5e0;
+}
+
+.equals-btn {
+    background-color: #48bb78;
+    color: #fff;
+}
+
+.equals-btn:hover {
+    background-color: #38a169;
+}
+
+/* Game Styles */
+.game-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+}
+
+.game-config {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.difficulty-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.difficulty-selector label {
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.difficulty-selector select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e0;
+    background-color: #f8fafc;
+    font-size: 0.95rem;
+    color: #4a5568;
+    outline: none;
+}
+
+.primary-btn {
+    background-color: #4299e1;
+    color: #fff;
+    padding: 8px 16px;
+    font-weight: 500;
+}
+
+.primary-btn:hover {
+    background-color: #3182ce;
+}
+
+.secondary-btn {
+    background-color: #e2e8f0;
+    color: #4a5568;
+    padding: 8px 16px;
+    font-weight: 500;
+}
+
+.secondary-btn:hover {
+    background-color: #cbd5e0;
+}
+
+.game-display {
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.game-message {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #2d3748;
+}
+
+.number-display {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.digit-box {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #2d3748;
+}
+
+.guess-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.guess-form input {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e0;
+    font-size: 1rem;
+    outline: none;
+    flex: 1;
+    max-width: 200px;
+}
+
+.submit-btn {
+    background-color: #48bb78;
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: 500;
+}
+
+.submit-btn:hover {
+    background-color: #38a169;
+}
+
+.submit-btn:disabled {
+    background-color: #cbd5e0;
+    cursor: not-allowed;
+}
+
+/* Game Stats Styles */
+.game-stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    padding: 12px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+}
+
+#attempts-left,
+#score {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.game-history {
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 15px;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.game-history ul {
+    list-style-type: none;
+}
+
+.game-history li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 0.95rem;
+}
+
+.game-history li:last-child {
+    border-bottom: none;
+}
+
+.game-history .result-low {
+    color: #ed8936;
+}
+
+.game-history .result-high {
+    color: #4299e1;
+}
+
+.game-history .result-correct {
+    color: #48bb78;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal h2 {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #a0aec0;
+}
+
+.close-modal:hover {
+    color: #4a5568;
+}
+
+.modal p {
+    margin-bottom: 15px;
+    color: #4a5568;
+}
+
+.modal ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #4a5568;
+}
+
+.modal li {
+    margin-bottom: 5px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .btn {
+        padding: 12px;
+        min-height: 50px;
+    }
+    
+    .guess-form {
+        flex-direction: column;
+    }
+    
+    .guess-form input {
+        max-width: none;
+    }
+    
+    .digit-box {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+footer {
+    background: #f8f8f8;
+    border-top: 1px solid #e0e0e0;
+    padding: 1.5em 0 1.5em 0;
+    margin-top: 2em;
+    font-size: 0.95em;
+    color: #888;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+main {
+    margin-bottom: 4em;
+}

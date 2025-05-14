@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro IT Internship</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Micro IT Internship</h1>
+        <nav>
+            <ul>
+                <li><button id="calculatorTab" class="active">Calculator</button></li>
+                <li><button id="gameTab">Number Game</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="calculatorSection" class="active-section">
+            <div class="calculator">
+                <h2>Simple Calculator</h2>
+                <div class="calculator-display">
+                    <div id="calculation-history" class="history-display"></div>
+                    <div id="display" class="main-display">0</div>
+                </div>
+                <div class="calculator-history">
+                    <h3>History</h3>
+                    <ul id="history-list">
+                        <li class="empty-history">No calculations yet</li>
+                    </ul>
+                </div>
+                <div class="calculator-buttons">
+                    <button class="btn func-btn" data-value="C">C</button>
+                    <button class="btn func-btn" data-value="±">±</button>
+                    <button class="btn func-btn" data-value="%">%</button>
+                    <button class="btn op-btn" data-value="/">÷</button>
+                    <button class="btn num-btn" data-value="7">7</button>
+                    <button class="btn num-btn" data-value="8">8</button>
+                    <button class="btn num-btn" data-value="9">9</button>
+                    <button class="btn op-btn" data-value="*">×</button>
+                    <button class="btn num-btn" data-value="4">4</button>
+                    <button class="btn num-btn" data-value="5">5</button>
+                    <button class="btn num-btn" data-value="6">6</button>
+                    <button class="btn op-btn" data-value="-">−</button>
+                    <button class="btn num-btn" data-value="1">1</button>
+                    <button class="btn num-btn" data-value="2">2</button>
+                    <button class="btn num-btn" data-value="3">3</button>
+                    <button class="btn op-btn" data-value="+">+</button>
+                    <button class="btn num-btn zero" data-value="0">0</button>
+                    <button class="btn num-btn" data-value=".">.</button>
+                    <button class="btn equals-btn" data-value="=">=</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="gameSection">
+            <div class="game-container">
+                <h2>Number Guessing Game</h2>
+                <div class="game-config">
+                    <div class="difficulty-selector">
+                        <label for="difficulty">Difficulty:</label>
+                        <select id="difficulty">
+                            <option value="easy">Easy (1-50, 10 attempts)</option>
+                            <option value="medium" selected>Medium (1-100, 7 attempts)</option>
+                            <option value="hard">Hard (1-200, 5 attempts)</option>
+                        </select>
+                    </div>
+                    <button id="start-game" class="primary-btn">Start New Game</button>
+                </div>
+                <div class="game-display">
+                    <div id="game-message" class="game-message">I'm thinking of a number...</div>
+                    <div class="number-display">
+                        <div id="hundreds" class="digit-box">-</div>
+                        <div id="tens" class="digit-box">-</div>
+                        <div id="ones" class="digit-box">-</div>
+                    </div>
+                    <form class="guess-form" id="guess-form">
+                        <input type="number" id="guess-input" placeholder="Enter your guess (1-100)">
+                        <button type="submit" id="submit-guess" class="submit-btn">Submit Guess</button>
+                    </form>
+                    <div class="game-stats">
+                        <span id="attempts-left">Attempts remaining: 7</span>
+                        <span id="score">Score: 0</span>
+                    </div>
+                </div>
+                <div class="game-history">
+                    <h3>Previous Guesses</h3>
+                    <ul id="guess-history">
+                        <li class="empty-history">No guesses yet</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="instructions-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <h2>How to use?</h2>
+            <div id="calculator-instructions">
+                <p>Use the calculator to perform basic arithmetic operations:</p>
+                <ul>
+                    <li>Click the numbers and operations to build your calculation</li>
+                    <li>Press "=" or Enter to get the result</li>
+                    <li>Press "C" or Escape to clear the calculator</li>
+                    <li>View your calculation history below the display</li>
+                </ul>
+            </div>
+            <div id="game-instructions" style="display: none;">
+                <p>Number Guessing Game Rules:</p>
+                <ul>
+                    <li>The computer will pick a random number</li>
+                    <li>Enter your guess and press Enter or click Submit</li>
+                    <li>The game will tell you if your guess is too high or too low</li>
+                    <li>Try to guess the number in as few attempts as possible</li>
+                    <li>Choose a difficulty level to adjust the range and number of attempts</li>
+                </ul>
+            </div>
+            <div class="modal-buttons">
+                <button id="got-it-btn" class="primary-btn">Got it</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="result-title"></h2>
+            <p id="result-message"></p>
+            <div class="modal-buttons">
+                <button id="play-again-btn" class="primary-btn">Play Again</button>
+                <button id="close-result-btn" class="secondary-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Micro IT Internship. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="calculator.js"></script>
+    <script src="number-game.js"></script>
+</body>
+</html>
